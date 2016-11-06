@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>查尔德的世界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body class="">
+    <div class="navbar navbar-default navbar-static-top">
+      <style>
+        .body{padding-top:70px}
+      </style>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/sessionset/">查尔德的博客</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="/index/">博客</a>
+            </li>
+            <li>
+              <a href="/comment_wall/?page=1/">留言板</a>
+            </li>			
+            <li>
+              <a href="/about_me/">关于我</a>
+            </li>
+            <li>
+              <a href="#">相关网站</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="page-header" draggable="true">
+            <h1>
+              <small>{{article.title}} &nbsp;</small>
+              <small>
+                <small>{{datetime}}</small>
+              </small>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p></p>
+          <pre class="visible-lg visible-sm visible-xs" style="font-size:19px">{{article.content}}</pre>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <a class="btn btn-warning" href="/index/">返回</a>
+		  {% if login_view %}
+		  <a class="btn btn-warning" href="/edit/?art_id={{article.id}}">编辑</a>
+		  {% endif %}
+        </div>
+      </div>
+      <div class="row"></div>
+      <div class="row"></div>
+    </div>
+  </body>
+    <legend></legend>
+    <p class="text-center" style="font-size:20" draggable="true">
+      <small>Built with django+python
+        <br>powed by picard
+        <br>picardxie@foxmail.com</small>
+    </p>
+    <small></small>
+</html>

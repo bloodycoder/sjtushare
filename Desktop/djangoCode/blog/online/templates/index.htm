@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>查尔德的世界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body class="">
+    <div class="navbar navbar-default navbar-static-top">
+      <style>
+        .body{padding-top:70px}
+      </style>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+			{% if login_view %}
+            <a class="navbar-brand" href="/sessionset/">BOSS欢迎您</a>
+			{% else %}
+			<a class="navbar-brand" href="/sessionset/">查尔德的博客</a>
+			{% endif %}
+          
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="/index/">博客</a>
+            </li>
+            <li>
+              <a href="/comment_wall/?page=1/">留言板</a>
+            </li>
+            <li>
+              <a href="/about_me/">关于我</a>
+            </li>
+            <li>
+              <a href="#">相关网站</a>
+            </li>
+			{% if login_view %}
+            <li>
+              <a href="/write/">写文章</a>
+            </li>
+			{% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1>{{top_article.title}}</h1>
+            <p>{{top_article.intro}}</p>
+            <a href="/read?page={{top_article.id}}/" class="btn btn-primary btn-large" >read more</a>
+          </div>
+          <hr>
+        </div>
+      </div>
+	  {% if article1 %}
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <h2 class="text-success">{{article1.title}}</h2>
+          <p>{{article1.intro}}</p>
+          <a class="btn btn-primary" href="/read?page={{article1.id}}/">read more<br></a>
+        </div>
+        <div class="col-md-4 text-center"></div>
+      </div>
+	  <br></br>
+	  <legend></legend>
+      {% endif %}
+	  {% if article2 %}
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <h2 class="text-primary">{{article2.title}}</h2>
+          <p>{{article2.intro}}</p>
+          <a class="btn btn-primary" href="/read?page={{article2.id}}/">read more<br></a>
+        </div>
+        <div class="col-md-4 text-center"></div>
+      </div>
+	  <br></br>
+	  <legend></legend>
+	  {% endif %}
+	  {% if article3 %}
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <h2 class="text-success">{{article3.title}}</h2>
+          <p>{{article3.intro}}</p>
+          <a class="btn btn-primary" href="/read?page={{article3.id}}/">read more<br></a>
+        </div>
+        <div class="col-md-4 text-center"></div>
+      </div>
+	  <br></br>
+	  <legend></legend>
+	  {% endif %}
+	  {% if article4 %}
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <h2 class="text-primary">{{article4.title}}</h2>
+          <p>{{article4.intro}}</p>
+          <a class="btn btn-primary" href="/read?page={{article4.id}}/">read more<br></a>
+        </div>
+        <div class="col-md-4 text-center"></div>
+      </div>
+	  <br></br>
+	  <legend></legend>
+	  {% endif %}
+	  {% if article5 %}
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <h2 class="text-success">{{article5.title}}</h2>
+          <p>{{article5.intro}}</p>
+          <a class="btn btn-primary" href="/read?page={{article5.id}}/">read more<br></a>
+        </div>
+        <div class="col-md-4 text-center"></div>
+      </div>
+	  <br></br>
+	  <legend></legend>
+	  {% endif %}	  
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <ul class="pagination">
+            <li>
+              <a href="/setpage/?page=minus/">Prev</a>
+            </li>
+			{% if first %}
+            <li 
+			{% if on1 %}
+			class="active"
+			{% endif %}
+			>
+              <a href="/setpage?page={{first}}">{{first}}</a>
+            </li>
+			{% endif %}
+			{% if second %}
+            <li
+			{% if on2 %}
+			class="active"
+			{% endif %}
+			>
+              <a href="/setpage?page={{second}}">{{second}}</a>
+            </li>
+			{% endif %}
+			{% if third %}
+            <li
+			{% if on3 %}
+			class="active"
+			{% endif %}
+			>
+              <a href="/setpage?page={{third}}">{{third}}</a>
+            </li>
+			{% endif %}
+			{% if fourth %}
+            <li
+			{% if on4 %}
+			class="active"
+			{% endif %}			
+			>
+              <a href="/setpage?page={{fourth}}">{{fourth}}</a>
+            </li>
+			{% endif %}
+			{% if fifth %}
+            <li
+			{% if on5 %}
+			class="active"
+			{% endif %}			
+			>
+              <a href="/setpage?page={{fifth}}">{{fifth}}</a>
+            </li>
+			{% endif %}
+            <li>
+              <a href="/setpage/?page=plus/">Next</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+      <div class="row">
+        <div class="col-md-12">
+          <legend></legend>
+          <p class="text-center" style="font-size:20" draggable="true">
+            <small>Built with django+python
+              <br>powed by picard
+              <br>picardxie@foxmail.com</small>
+          </p>
+          <small></small>
+        </div>
+</html>

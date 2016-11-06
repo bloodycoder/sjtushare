@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>查尔德的世界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body class="" draggable="true">
+    <div class="navbar navbar-default navbar-static-top">
+      <style>
+        .body{padding-top:70px}
+      </style>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/sessionset/">查尔德的博客</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li>
+              <a href="/index/">博客</a>
+            </li>
+            <li class="active">
+              <a href="/index/">留言板</a>
+            </li>
+            <li>
+              <a href="/about_me/">关于我</a>
+            </li>
+            <li>
+              <a href="#">相关网站</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">{% if com1 %}
+      <div class="row">
+        <div class="col-md-12">
+          <h3>{{com1.name}}</h3>
+          <pre style="font-size:23"> {{ com1.content}}</pre>
+          <legend></legend>
+        </div>{% endif %} {% if com2 %}
+        <div class="col-md-12">
+          <h3>{{com2.name}}</h3>
+          <pre style="font-size:23"> {{com2.content}}</pre>
+          <legend></legend>
+        </div>{% endif %} {% if com3 %}
+        <div class="col-md-12">
+          <h3>{{com3.name}}</h3>
+          <pre style="font-size:23">  {{com3.content}}</pre>
+          <legend></legend>
+        </div>{% endif %} {% if com4 %}
+        <div class="col-md-12">
+          <h3>{{com4.name}}</h3>
+          <pre style="font-size:23">{{com4.content}}</pre>
+          <legend></legend>
+        </div>{% endif %} {% if com5 %}
+        <div class="col-md-12">
+          <h3>{{com5.name}}</h3>
+          <pre style="font-size:23">  {{com5.content}}</pre>
+          <legend></legend>
+        </div>{% endif %} {% if com6 %}
+        <div class="col-md-12">
+          <h3>{{com6.name}}</h3>
+          <pre style="font-size:23">  {{com6.content}}</pre>
+          <legend></legend>
+        </div>{% endif %}</div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+          <ul class="pagination">
+            <li>
+              <a href="/comment_wall/?page={{prepage}}/">Prev</a>
+            </li>
+			{% if page1 %}
+            <li {% ifequal page1 currentpage %}class = "active"{% endifequal %}>
+              <a href="/comment_wall/?page={{page1}}/">{{page1}}</a>
+            </li>
+			{% endif %}
+			{% if page2 %}
+            <li {% ifequal page2 currentpage %}% endifequal %}>
+              <a href="/comment_wall/?page={{page2}}/">{{page2}}</a>
+            </li>
+			{% endif %}
+			{% if page3 %}
+            <li {% ifequal page3 currentpage %}class = "active"{% endifequal %}>
+              <a href="/comment_wall/?page={{page3}}/">{{page3}}</a>
+            </li>
+			{% endif %}
+			{% if page4 %}
+            <li {% ifequal page4 currentpage %}class = "active"{% endifequal %}>
+              <a href="/comment_wall/?page={{page4}}/">{{page4}}</a>
+            </li>
+			{% endif %}
+			{% if page5 %}
+            <li {% ifequal page5 currentpage %}class = "active"{% endifequal %}>
+              <a href="/comment_wall/?page={{page5}}/">{{page5}}</a>
+            </li>
+			{% endif %}
+            <li>
+              <a href="/comment_wall/?page={{nextpage}}/">Next</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="page-header">
+            <h1>发表评论</h1>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row" draggable="true">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <form method="post" enctype="multipart/form-data" role="form">
+		    {% csrf_token %}
+            <div class="form-group">
+              <label class="control-label" for="exampleInputEmail1">昵称</label>
+              <input class="form-control" name = "name">
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="exampleInputPassword1">内容</label>
+              <br>
+              <textarea cols="56" rows="5" name="content">这里恰好十八个字，不管你信不，反正我信了。</textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </body>
+    <legend></legend>
+    <p class="text-center" style="font-size:20" draggable="true">
+      <small>Built with django+python
+        <br>powed by picard
+        <br>picardxie@foxmail.com</small>
+    </p>
+    <small></small>
+</html>
