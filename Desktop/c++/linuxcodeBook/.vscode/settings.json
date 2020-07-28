@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "utmpx.h": "c",
+        "fcntl.h": "c",
+        "unistd.h": "c",
+        "time.h": "c",
+        "errno.h": "c",
+        "istream": "c",
+        "locale": "c",
+        "ostream": "c"
+    },
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/usr/bin/python"
+}
